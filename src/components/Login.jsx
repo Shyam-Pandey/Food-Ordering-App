@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { SigninSinoutContext } from '../App'
 
 const Login = () => {
-    const { isLoggedIn, setIsloggedIn } = useContext(SigninSinoutContext);
+    const { isLoggedIn, setIsloggedIn } = useContext(SigninSinoutContext)
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
@@ -20,7 +20,6 @@ const Login = () => {
     }
 
     const handleLogin = () => {
-        //console.log(emailPasswordValidation(email.current.value, password.current.value))
         const res = emailPasswordValidation(email.current.value, password.current.value);
         setError(res)
         if (error) return;

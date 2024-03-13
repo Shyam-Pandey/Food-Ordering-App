@@ -16,6 +16,7 @@ const Body = () => {
         setSearchRestaurants(e.target.value);
     }
 
+
     const fetchData = async () => {
         // API call to get data here.
         const data = await fetch(RESTAURANT_LIST);

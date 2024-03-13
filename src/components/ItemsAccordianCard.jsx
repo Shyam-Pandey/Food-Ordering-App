@@ -12,15 +12,15 @@ const ItemsAccordianCard = ({ itemvalue }) => {
     return (
         <div className=''>
             <div className='flex justify-between mt-3'>
-                <div className='w-[70%]'>
-                    <h1 className='text-black text-lg font-medium'>{data?.name}</h1>
-                    <h5 className='text-sm mt-1 text-black'>{`${data?.price / 100} Rs.`}</h5>
-                    <p className='text-sm mt-5 text-gray-400'>{data?.description}</p>
+                <div className=' w-[78%] sm:w-[70%] md:w-[100%] ml-3'>
+                    <h1 className='text-black sm:text-lg sm:font-medium '>{data?.name}</h1>
+                    <h5 className='sm:text-sm mt-1 text-black'>{`${data?.price / 100} Rs.`}</h5>
+                    <p className='sm:text-sm mt-5 text-gray-400 text-[10px] w-[100%]'>{data?.description}</p>
                 </div>
-                <div className='flex flex-col gap-2 justify-end  '>
-                    <img className='w-28 h-24 rounded-xl relative' src={RESTAURANT_MENU_LOGO + data?.imageId} alt="logo" />
+                <div className='flex flex-col gap-2 justify-end w-[20%]  '>
+                    <img className=' w-16 h-12 sm:w-28 sm:h-24 rounded-xl relative' src={RESTAURANT_MENU_LOGO + data?.imageId} alt="logo" />
                     <button
-                        className='w-20 h-9 bg-green-100 ml-5 absolute '
+                        className=' w-10 h-5 ml-3 text-xs  sm:w-20 sm:h-9 bg-green-100 sm:ml-5 absolute  rounded-sm cursor-pointer'
                         onClick={() => addHandeler(itemvalue)}
                     >
                         Add

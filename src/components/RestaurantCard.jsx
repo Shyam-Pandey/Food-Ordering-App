@@ -11,7 +11,7 @@ const RestaurantCard = ({ restaurant }) => {
     } else {
         ratingColor = "red"
     }
-    console.log(restaurant.info)
+    // console.log(restaurant.info)
     //console.log(restaurant.info) style={{ width: '240px', height: '272px', margin: '5px 5px', border: '2px solid black', color: 'black', borderRadius: '10px' }}
     return (
         <div className='resCard w-60 h-[295px] m-1 shadow-3xl border-[2px] border-green-100 bg-white rounded-xl hover:scale-105 ' >

@@ -25,7 +25,7 @@ import Login from './components/Login'
 export const SigninSinoutContext = createContext(null) // creates a context object.
 
 const App = () => {
-  const [isLoggedIn, setIsloggedIn] = useState(true)
+  const [isLoggedIn, setIsloggedIn] = useState(false)
   return (
     <Provider store={store}>
       <SigninSinoutContext.Provider value={{ isLoggedIn, setIsloggedIn }}>
