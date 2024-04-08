@@ -8,10 +8,20 @@ const cartSlice = createSlice({
     reducers: {
         addItem: (state, action) => {
             state.items.push(action.payload)
+            // console.log(action.payload.card.info.id)
+            // console.log(state.items[0].card.info.id)
         },
         removeItem: (state, action) => {
-            // return state.items = state.items.filter((item)=> item.id !== action.payload)
-            state.items.pop();
+            state.items = state.items.filter((item) =>
+                item.card.info.id !== action.payload.card.info.id
+                // if (item.card.info.id === action.payload.card.info.id) {
+                //     state.items = state.items.length - 1
+                // }
+                // else { item.card.info.id !== action.payload.card.info.id }
+            )
+            // console.log(state.items.id)
+            // console.log(action.payload)
+            // state.items.pop();
         },
         emptyCart: (state, action) => {
             state.items.length = 0;

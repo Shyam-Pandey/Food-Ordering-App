@@ -5,8 +5,6 @@ import ItemsAccordianCard from './ItemsAccordianCard'
 
 const ItemsCard = ({ item }) => {
     const [isOpen, setIsOpen] = useState(false);
-    // const itemcard = 
-    console.log(item)
     return (
         <div className=''>
             <div>
@@ -25,8 +23,8 @@ const ItemsCard = ({ item }) => {
 
             {
                 isOpen ? (
-                    item.card.card.itemCards.map((itemvalue) => (
-                        <ItemsAccordianCard key={itemvalue.card.info.id} itemvalue={itemvalue} />
+                    item?.card?.card?.itemCards?.map((itemvalue) => (
+                        <ItemsAccordianCard key={itemvalue?.card?.info?.id} itemvalue={itemvalue} />
                     ))) : null
             }
         </div>

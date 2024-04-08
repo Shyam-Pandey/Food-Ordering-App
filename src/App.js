@@ -2,7 +2,6 @@ import React, { createContext, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-
 // import the library
 import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -20,12 +19,18 @@ import RestaurantMenu from './components/RestaurantMenu'
 import Cart from './components/Cart'
 import store from './utils/store'
 import Login from './components/Login'
+import Contact from './components/Contact'
 
 
 export const SigninSinoutContext = createContext(null) // creates a context object.
 
 const App = () => {
   const [isLoggedIn, setIsloggedIn] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const handleVisible = () => {
+    setIsVisible((isVisible) => !isVisible)
+    // console.log("Clicked me")
+  }
   return (
     <Provider store={store}>
       <SigninSinoutContext.Provider value={{ isLoggedIn, setIsloggedIn }}>
@@ -34,6 +39,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/restaurant/:resId" element={<RestaurantMenu />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Error />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />

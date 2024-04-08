@@ -11,16 +11,14 @@ const RestaurantCard = ({ restaurant }) => {
     } else {
         ratingColor = "red"
     }
-    // console.log(restaurant.info)
-    //console.log(restaurant.info) style={{ width: '240px', height: '272px', margin: '5px 5px', border: '2px solid black', color: 'black', borderRadius: '10px' }}
     return (
-        <div className='resCard w-60 h-[295px] m-1 shadow-3xl border-[2px] border-green-100 bg-white rounded-xl hover:scale-105 ' >
+        <div className='w-56 h-[250px] md:w-60 md:h-[270px] shadow-3xl border-[2px] border-orange-100 rounded-xl hover:scale-105 ' >
             <img
                 src={`${RESTAURANT_MENU_LOGO}/${restaurant?.info?.cloudinaryImageId}`}
                 alt="logo"
-                className="w-52 h-36 m-4 border-[1px] border-gray-50 rounded-lg"
+                className="w-48 h-28 md:w-52 md:h-36 m-[14px] border-[1px] border-gray-50 rounded-lg"
             />
-            <div className="p-2 ml-2">
+            <div className="ml-5 -mt-5">
                 <h2 className="text-gray-500">{restaurant?.info?.name}</h2>
                 <span className="flex text-sm font-bold gap-1 mt-1">
                     <span>
@@ -29,7 +27,7 @@ const RestaurantCard = ({ restaurant }) => {
                     </span>
                     <span >
                         <FontAwesomeIcon className="text-[4px] mr-1" icon="fa-solid fa-circle" />
-                        {restaurant.info.sla.slaString}
+                        {restaurant?.info?.sla?.slaString}
                     </span>
                 </span>
                 <p className="text-xs mt-1">{restaurant?.info?.cuisines?.slice(0, 3).join(",")}</p>
@@ -37,15 +35,6 @@ const RestaurantCard = ({ restaurant }) => {
             </div>
         </div>
     )
-}
-
-export const modifiedRestaurantCard = (RestaurantCard) => {
-    return (props) => {
-        <>
-            <h3>Promoted</h3>
-            <RestaurantCard  {...props} />
-        </>
-    }
 }
 
 export default RestaurantCard;
